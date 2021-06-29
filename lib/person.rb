@@ -59,18 +59,35 @@ class Person
         "Hi #{friend.name}! It's #{self.name}. How are you?"
     end
     
-    def start_conversation(person, topic)
-        case topic
-        when "politics"
+    # def start_conversation(person, topic)
+    #     case topic
+    #     when "politics"
+    #         self.happiness -= 2
+    #         person.happiness -= 2
+    #         "blah blah partisan blah lobbyist"
+    #     when "weather"
+    #         self.happiness += 1
+    #         person.happiness += 1
+    #         "blah blah sun blah rain"
+    #     else
+    #         "blah blah blah blah blah"
+    #     end
+    # end
+    def start_conversation(anotherPerson, topic)
+        
+        if (topic == "politics")
+            # happiness(@happiness -= 2)
             self.happiness -= 2
-            person.happiness -= 2
-            "blah blah partisan blah lobbyist"
-        when "weather"
-            self.happiness += 1
-            person.happiness += 1
-            "blah blah sun blah rain"
+            anotherPerson.happiness -=2
+            return 'blah blah partisan blah lobbyist'
+        elsif (topic == "weather")
+            self.happiness +=1 
+            anotherPerson.happiness +=1
+            return 'blah blah sun blah rain'
         else
-            "blah blah blah blah blah"
+            return 'blah blah blah blah blah'
         end
     end
+
+
 end
